@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Send_Redirect">
+    <DisplayName>AM_Send_Redirect</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" type="response">response</AssignTo>
+    <Remove>
+        <Payload>true</Payload>
+    </Remove>
+    <Set>
+        <StatusCode>302</StatusCode>
+        <ReasonPhrase>Found</ReasonPhrase>
+        <Headers>
+            <Header name="Location">{idpEndpoint}?wa=wsignin1.0&amp;wctx=rm=0&amp;wtrealm={issuer}&amp;wreply=https://{request.header.Host}{proxy.basepath}/callback</Header>
+        </Headers>
+    </Set>
+</AssignMessage>

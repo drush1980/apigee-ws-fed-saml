@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="InitiateRequestorIdPRedirect">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF_NoSAMLRequest</Name>
+                    <Condition>request.formparam.SAMLRequest = null</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM_Get_Config</Name>
+                </Step>
+                <Step>
+                    <Name>AM_base64_Decode_SAMLAuthnRequest</Name>
+                </Step>
+                <Step>
+                    <Name>EV_GetSAMLAuthnReqDetails</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Send_Redirect</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/auth") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="IdPCallback">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF_No_wresult</Name>
+                    <Condition>request.formparam.wresult = null</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM_Get_Config</Name>
+                </Step>
+                <Step>
+                    <Name>AM_GetWsFedResponse</Name>
+                </Step>
+                <Step>
+                    <Name>XSL_CreateSAMLResponse</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_SendToTarget</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/ws-fed-saml-proxy</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

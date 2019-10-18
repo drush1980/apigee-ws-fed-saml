@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV_GetSAMLAuthnReqDetails">
+    <DisplayName>EV_GetSAMLAuthnReqDetails</DisplayName>
+    <Source clearPayload="false">message.content</Source>
+    <XMLPayload stopPayloadProcessing="false">
+        <Namespaces>
+            <Namespace prefix="saml2p">urn:oasis:names:tc:SAML:2.0:protocol</Namespace>
+            <Namespace prefix="saml2">urn:oasis:names:tc:SAML:2.0:assertion</Namespace>
+        </Namespaces>
+        <Variable name="issuer" type="string">
+            <XPath>/saml2p:AuthnRequest/saml2:Issuer/text()</XPath>
+        </Variable>
+    </XMLPayload>
+</ExtractVariables>

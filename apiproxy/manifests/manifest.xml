@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM_GetWsFedResponse" version="SHA-512:5ec9916bc9d78f09c3ce6a4e1a468c9b283fe18e15864c2880cd700ee02c9a59b8f5120edfc33c2980671d30e81c06385b56a57923556da5c81a49460cebbece"/>
+        <VersionInfo resourceName="AM_SendToTarget" version="SHA-512:45311a42dbbff624c4863778e4463d4a579616624ef3f60ed2700a9a28c208ac2264ca77195ef9df56a1187d63df98e9b543bed404107dbb6218d9aeb8bdec4b"/>
+        <VersionInfo resourceName="AM_Send_Redirect" version="SHA-512:2fb3a4bc7884a1adcafd88ec2f8e92687237b1114deb9464f5150ac8ad26d77793d60e8e216551c3adf704fb08d0cb8a6e82655f4ea758cba3ec5c3891d9bbc6"/>
+        <VersionInfo resourceName="AM_base64_Decode_SAMLAuthnRequest" version="SHA-512:4f97f002ccbf02c8e72099a96d3434b7635d2a2ef2a68fa3c8f86b90492e86faeb66dc54f28f53526f180e2de2e6e6c41983576a8f602cd95c35771c1e9a281d"/>
+        <VersionInfo resourceName="EV_GetSAMLAuthnReqDetails" version="SHA-512:627a550f07cd61712d03bf14898802db98b3505172fece4771180a0816c4cb54ae7d68d2b24fe83015a3d3426bf36805b44a8601e4a864e77977ec8ca402e6bc"/>
+        <VersionInfo resourceName="KVM_Get_Config" version="SHA-512:728f9cca1d6c7d4a184eb4d55766dd6157963d6a51ae4360fe113919a789a107621a33acaaba4e3ad85f29f00508babf1411505979362065780ecdd6479d4f34"/>
+        <VersionInfo resourceName="RF_NoSAMLRequest" version="SHA-512:434885c4d2d3340fd354287862339c8541f9dd96f97fdda3531ee0bee7bc6e2fede0b3003b297cad0f83163ff53852f5a8d5c4b7b825e5b4ef61f9d7ad207893"/>
+        <VersionInfo resourceName="RF_No_wresult" version="SHA-512:a073956fde00fba5a968789711461a3a72b77c9f6aa9cf61af284b1b101f8dce1ced0831480e9ea9abc4c1f6fb9861a85d78101c8048f603852c0bf97d926b23"/>
+        <VersionInfo resourceName="XSL_CreateSAMLResponse" version="SHA-512:5413e55754eed96b5a8568991f0427382cc780572a44f8469dc59a001510da77cfa4144cafa8006a9fffd88ac2b7b67718fef181238f560da51a986d8bcd3f83"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:303f69cecd74914c740335dcc22c331d2630aab5f9e1cdabf6455fd190d25f427b4159896a80eeba1c745954ac3f106c6498bf42a1823f5bd1b5791a19e6a256"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="xsl://XSL-Transform-1.xsl" version="SHA-512:6040fc6b8822fc5acda21a4e2eab9a0181d4fa9679b889851157cdf4e54992c30e027b2c4ec7e08c5741640f6bb1772aba17b83dedf823df54840f85f64370e6"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

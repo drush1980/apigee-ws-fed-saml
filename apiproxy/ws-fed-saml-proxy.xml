@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="8" name="ws-fed-saml-proxy">
+    <Basepaths>/v1/ws-fed-saml-proxy</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1570832646281</CreatedAt>
+    <CreatedBy>defaultUser</CreatedBy>
+    <Description>Proxy to convert between WS-Federation and SAML for SSO</Description>
+    <DisplayName>ws-fed-saml-proxy</DisplayName>
+    <LastModifiedAt>1571416812374</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <ManifestVersion>SHA-512:b3b692dd5e13b49d3ae0104c7ceac34b688d74a929b6a8f4e1c3ef9fb43dcf9a77e2d280235bb59342ab6e16c1d7a657c4cda7808be87233447860f3b9978b5f</ManifestVersion>
+    <Policies>
+        <Policy>AM_GetWsFedResponse</Policy>
+        <Policy>AM_SendToTarget</Policy>
+        <Policy>AM_Send_Redirect</Policy>
+        <Policy>AM_base64_Decode_SAMLAuthnRequest</Policy>
+        <Policy>EV_GetSAMLAuthnReqDetails</Policy>
+        <Policy>KVM_Get_Config</Policy>
+        <Policy>RF_NoSAMLRequest</Policy>
+        <Policy>RF_No_wresult</Policy>
+        <Policy>XSL_CreateSAMLResponse</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>xsl://XSL-Transform-1.xsl</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

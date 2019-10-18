@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="XSL_CreateSAMLResponse">
+    <DisplayName>XSL_CreateSAMLResponse</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <ResourceURL>xsl://XSL-Transform-1.xsl</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true">
+        <Parameter name="dest" ref="acsURL"/>
+    </Parameters>
+    <OutputVariable>samlpResponse</OutputVariable>
+</XSL>

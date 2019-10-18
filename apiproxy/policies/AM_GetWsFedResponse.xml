@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_GetWsFedResponse">
+    <DisplayName>AM_GetWsFedResponse</DisplayName>
+    <Set>
+        <Payload contentType="text/xml">{request.formparam.wresult}</Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

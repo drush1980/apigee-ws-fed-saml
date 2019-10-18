@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_SendToTarget">
+    <DisplayName>AM_SendToTarget</DisplayName>
+    <Properties/>
+    <Set>
+        <StatusCode>200</StatusCode>
+        <ReasonPhrase>OK</ReasonPhrase>
+        <Payload contentType="text/html">
+            <html>
+                <body Onload="document.forms[0].submit()">
+                    <form method="POST" action="{acsURL}">
+                        <input type="hidden" name="SAMLResponse" value="{encodeBase64(samlpResponse)}"/>
+                    </form>
+                </body>
+            </html>
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
