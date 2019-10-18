@@ -30,7 +30,7 @@ Before exercising this proxy, you need to:
 
 4. Update the SAML SP configuration with the IdP's entity ID and signing certificate.
 
-5. Create a KVM named `federationInfo` in your Apigee environment.  Add two keys, named `acsURL` (value of the SP assertion consumer service URL), and `idpEndpoint` (value of WS-Fed IP/STS URL).
+5. Create a [KVM](https://docs.apigee.com/api-platform/cache/key-value-maps) named `federationInfo` in your Apigee environment.  Add two keys, named `acsURL` (value of the SP assertion consumer service URL), and `idpEndpoint` (value of WS-Fed IP/STS URL).
 
 6. Trigger an SP initiated SAML login flow.
 
