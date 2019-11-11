@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
     <Description/>
-    <FaultRules/>
-    <PreFlow name="PreFlow">
-        <Request/>
-        <Response/>
-    </PreFlow>
-    <PostFlow name="PostFlow">
-        <Request/>
-        <Response/>
-    </PostFlow>
+    <FaultRules>
+        <FaultRule name="SAMLError">
+            <Step>
+                <Name>RF_SAMLError</Name>
+            </Step>
+            <Condition>(ValidateSAMLAssertion.failed = true)</Condition>
+        </FaultRule>
+    </FaultRules>
     <Flows>
         <Flow name="InitiateRequestorIdPRedirect">
             <Description/>
             <Request>
                 <Step>
-                    <Name>RF_NoSAMLRequest</Name>
                     <Condition>request.formparam.SAMLRequest = null</Condition>
+                    <FaultRules/>
+                    <Name>RF_NoSAMLRequest</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>KVM_Get_Config</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>AM_base64_Decode_SAMLAuthnRequest</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>EV_GetSAMLAuthnReqDetails</Name>
+                </Step>
+                <Step>
+                    <Name>JS_GenerateStateCacheEntry</Name>
+                </Step>
+                <Step>
+                    <Name>PC_Store_AuthnRequestInfo</Name>
                 </Step>
             </Request>
             <Response>
                 <Step>
+                    <FaultRules/>
                     <Name>AM_Send_Redirect</Name>
                 </Step>
             </Response>
@@ -39,27 +49,61 @@
             <Description/>
             <Request>
                 <Step>
-                    <Name>RF_No_wresult</Name>
-                    <Condition>request.formparam.wresult = null</Condition>
+                    <Condition>(request.formparam.wresult = null) or (request.formparam.wctx = null) or (request.formparam.wa = null) or (request.formparam.wa != "wsignin1.0")</Condition>
+                    <FaultRules/>
+                    <Name>RF_No_wParam</Name>
                 </Step>
                 <Step>
-                    <Name>KVM_Get_Config</Name>
+                    <Name>LC_Lookup_State</Name>
                 </Step>
                 <Step>
-                    <Name>AM_GetWsFedResponse</Name>
+                    <Condition>lookupcache.LC_Lookup_State.cachehit = false</Condition>
+                    <Name>RF_NoState</Name>
                 </Step>
                 <Step>
-                    <Name>XSL_CreateSAMLResponse</Name>
+                    <Name>AM_GetStateVars</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>AM_SetWsFedResponse</Name>
+                </Step>
+                <Step>
+                    <Name>VS_Validate_SAML_Assertion</Name>
+                </Step>
+                <Step>
+                    <Name>EV_GetSAMLAssertionDetails</Name>
+                </Step>
+                <Step>
+                    <Condition>audienceRestriction != audience</Condition>
+                    <Name>RF_BadAudience</Name>
+                </Step>
+                <Step>
+                    <Name>JS_GenerateDates</Name>
+                </Step>
+                <Step>
+                    <Name>AM_SetSAMLResponse</Name>
+                </Step>
+                <Step>
+                    <Name>GS_Generate_SAML_Assertion</Name>
                 </Step>
             </Request>
             <Response>
                 <Step>
+                    <FaultRules/>
                     <Name>AM_SendToTarget</Name>
                 </Step>
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.verb = "POST")</Condition>
         </Flow>
     </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
     <HTTPProxyConnection>
         <BasePath>/v1/ws-fed-saml-proxy</BasePath>
         <Properties/>

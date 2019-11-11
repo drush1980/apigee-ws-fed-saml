@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV_GetSAMLAssertionDetails">
+    <DisplayName>EV_GetSAMLAssertionDetails</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <Source clearPayload="false">message.content</Source>
+    <XMLPayload stopPayloadProcessing="false">
+        <Namespaces>
+            <Namespace prefix="wst">http://docs.oasis-open.org/ws-sx/ws-trust/200512</Namespace>
+            <Namespace prefix="saml2">urn:oasis:names:tc:SAML:2.0:assertion</Namespace>
+        </Namespaces>
+        <Variable name="audienceRestriction" type="string">
+            <XPath>/wst:RequestSecurityTokenResponse/wst:RequestedSecurityToken/saml2:Assertion/saml2:Conditions/saml2:AudienceRestriction/saml2:Audience/text()</XPath>
+        </Variable>
+    </XMLPayload>
+</ExtractVariables>

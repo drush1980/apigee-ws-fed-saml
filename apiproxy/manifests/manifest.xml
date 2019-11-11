@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
     <Policies>
-        <VersionInfo resourceName="AM_GetWsFedResponse" version="SHA-512:5ec9916bc9d78f09c3ce6a4e1a468c9b283fe18e15864c2880cd700ee02c9a59b8f5120edfc33c2980671d30e81c06385b56a57923556da5c81a49460cebbece"/>
-        <VersionInfo resourceName="AM_SendToTarget" version="SHA-512:45311a42dbbff624c4863778e4463d4a579616624ef3f60ed2700a9a28c208ac2264ca77195ef9df56a1187d63df98e9b543bed404107dbb6218d9aeb8bdec4b"/>
-        <VersionInfo resourceName="AM_Send_Redirect" version="SHA-512:2fb3a4bc7884a1adcafd88ec2f8e92687237b1114deb9464f5150ac8ad26d77793d60e8e216551c3adf704fb08d0cb8a6e82655f4ea758cba3ec5c3891d9bbc6"/>
-        <VersionInfo resourceName="AM_base64_Decode_SAMLAuthnRequest" version="SHA-512:4f97f002ccbf02c8e72099a96d3434b7635d2a2ef2a68fa3c8f86b90492e86faeb66dc54f28f53526f180e2de2e6e6c41983576a8f602cd95c35771c1e9a281d"/>
-        <VersionInfo resourceName="EV_GetSAMLAuthnReqDetails" version="SHA-512:627a550f07cd61712d03bf14898802db98b3505172fece4771180a0816c4cb54ae7d68d2b24fe83015a3d3426bf36805b44a8601e4a864e77977ec8ca402e6bc"/>
-        <VersionInfo resourceName="KVM_Get_Config" version="SHA-512:728f9cca1d6c7d4a184eb4d55766dd6157963d6a51ae4360fe113919a789a107621a33acaaba4e3ad85f29f00508babf1411505979362065780ecdd6479d4f34"/>
-        <VersionInfo resourceName="RF_NoSAMLRequest" version="SHA-512:434885c4d2d3340fd354287862339c8541f9dd96f97fdda3531ee0bee7bc6e2fede0b3003b297cad0f83163ff53852f5a8d5c4b7b825e5b4ef61f9d7ad207893"/>
-        <VersionInfo resourceName="RF_No_wresult" version="SHA-512:a073956fde00fba5a968789711461a3a72b77c9f6aa9cf61af284b1b101f8dce1ced0831480e9ea9abc4c1f6fb9861a85d78101c8048f603852c0bf97d926b23"/>
-        <VersionInfo resourceName="XSL_CreateSAMLResponse" version="SHA-512:5413e55754eed96b5a8568991f0427382cc780572a44f8469dc59a001510da77cfa4144cafa8006a9fffd88ac2b7b67718fef181238f560da51a986d8bcd3f83"/>
+        <VersionInfo resourceName="AM_GetStateVars" version="SHA-512:0fa6fc140995137de5ba832a6b770590d312c2d5cd5476d250805d1e7cd138b1609ad810bdc8b73640fcb9fae809561663c9db8d2d2b9a7154db50cb747dcb44"/>
+        <VersionInfo resourceName="AM_SendToTarget" version="SHA-512:ebb482048137ecd589f992b5619135a580914fdc6dbeb11927079b78f9b087279dcad9587aeb84a52e72bc72ddf7d97626a635187a0312b2811468fd15f85f76"/>
+        <VersionInfo resourceName="AM_Send_Redirect" version="SHA-512:28990c9be72848b017768e3a431493c7ee7add0031cce37e96e3171b66d8027166ebf4d954f7c3429204707cc90c3006dec173c51e12b63f0c94a27444047099"/>
+        <VersionInfo resourceName="AM_SetSAMLResponse" version="SHA-512:ca7477578c0b931893cce7762dbaf506ee0f55c6da5fe04741684eff717c4cdea61e65e99b768124430143f1f2df7e376329bc031d2bf05bdfdb6151b7167d33"/>
+        <VersionInfo resourceName="AM_SetWsFedResponse" version="SHA-512:bb16eb1a4898f86bd24ebd33a1d7ec3cb90c5443fe06347043909c94fbc117b1a9af74ffde8cd32b0f8d2b3d0dad98b09a6719c3f664d05c22c745a0dc9eb7f5"/>
+        <VersionInfo resourceName="AM_base64_Decode_SAMLAuthnRequest" version="SHA-512:5915e0a334ece1c2bc7ce0e927c6cf7379d07f0685856a2060c5cc479a31fcfad65eb8a4c8fe5a458d6dde7ff794a841228d73667255882a8f9de6e7e9d616ba"/>
+        <VersionInfo resourceName="EV_GetSAMLAssertionDetails" version="SHA-512:5bb2f59d08a66044b4d6ea1551ad122d5249f6e027ded0ff80cfc765e7a9d4bfd9aa8734a1a00f477e4d8d1ffe2fd2e1ba39e8d87fceb9ad34a838a3c7c650b8"/>
+        <VersionInfo resourceName="EV_GetSAMLAuthnReqDetails" version="SHA-512:6a9f52465080a4ee43eae1417fb1ddf64744701e21f6bcfa8a770dd00292abeab1339b039a5984d0052ebe720763de50eb127ef15ae5a1af7dac2a7289317793"/>
+        <VersionInfo resourceName="GS_Generate_SAML_Assertion" version="SHA-512:ee4e9f4860070211335309dcf9a109fdea39ef0de454a50baef8bfb6ed7beb815596047990042400fc5e1a5a01b9888cd5e977a305db1b2c89fbb2acb1f0e60e"/>
+        <VersionInfo resourceName="JS_GenerateDates" version="SHA-512:61aadb264efc0aeb1fe38de3330fdefea70cdc488c58e57bf538fb3d02d9a1fd23f885e09e58ec1b1d90dccb80b4f9e12c160e8e9b09a1bb66e6dcbbf7cefba7"/>
+        <VersionInfo resourceName="JS_GenerateStateCacheEntry" version="SHA-512:251696b3aedd3d6221bbdb8eee0527a50b6caebf87f29becf1d7db64f74e151150ff6722ad2e364c2a88abf7f1ed20bf0ac014ac74329e7de33705bfa00de96a"/>
+        <VersionInfo resourceName="KVM_Get_Config" version="SHA-512:a620e45ed2ae545dcb06f4c7f8872bd12c86ca6733150249ee966abaa258fe308fd69de0ec96c507d3356d268ece4fe8044164c8c303523ae5dba97309104bba"/>
+        <VersionInfo resourceName="LC_Lookup_State" version="SHA-512:614d003ad738295e518e2b2c87727a9fdebc4d60024f675b9d43a783362c4a06485eee1a952ef73b54629e6c84493e492fe8d2604b48877395af16ca6f9be97f"/>
+        <VersionInfo resourceName="PC_Store_AuthnRequestInfo" version="SHA-512:9b23f09270630688015e50621a9e91cb24901ee9cbd194fd69f43e0c52b359a0e86396be5ec3b0002fb4c7f38e43c05870d2f652961ae009fb497859288c202f"/>
+        <VersionInfo resourceName="RF_BadAudience" version="SHA-512:f7aad3161d05671953cc4a935908db1e299490ddcd08f94382622414b6ce130c5fe5de6f53741808d6d13b0de591e6958389e20bfaa561bf6f110ca7c7caaa98"/>
+        <VersionInfo resourceName="RF_NoSAMLRequest" version="SHA-512:6aa883868a4918a650eeb5c06fe145ceb1e5e6b399cb53c7fb448c34aa9177f586b0c679c65640ede7b601b4a28b5b6f6a09ffffca00ca494410214a4807f09e"/>
+        <VersionInfo resourceName="RF_NoState" version="SHA-512:696c32d6d11c7c892e1f899b5ecf2db0d3889dc4e6663042d3ff965233e6aaf0ff4d93ce46dacd50d84c532215306333fd1719398489de32edc40127eb573a9a"/>
+        <VersionInfo resourceName="RF_No_wParam" version="SHA-512:cccacd36e9a556898998011fdae2d698c8df8b6a0c2fc69190ff1332538b86407dbb17b1e4548877b33da53d20ba379de62adbb554757ead08868184deba2765"/>
+        <VersionInfo resourceName="RF_SAMLError" version="SHA-512:f8c08a999964c5cc07e508692748cd3fa9eba8653e8c203fc9c4330007ce24b335f76c9c852b1587752344bd4919e07ab71608ee04e7af038649fee7ca528b6d"/>
+        <VersionInfo resourceName="VS_Validate_SAML_Assertion" version="SHA-512:26efcf502cc9f64786d44e4ff3f818a58fec8cbb4ad9527c9ce700300f1d60b9e36cc5d1b7a63e1c74150f8c1a703b1c3c28de7425697f3e969b4ec18d22bf85"/>
     </Policies>
     <ProxyEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:303f69cecd74914c740335dcc22c331d2630aab5f9e1cdabf6455fd190d25f427b4159896a80eeba1c745954ac3f106c6498bf42a1823f5bd1b5791a19e6a256"/>
+        <VersionInfo resourceName="default" version="SHA-512:f95dd358075b03e9649e18b0ed223b99ee7460c4731451105210f2ce8a0aeedfed3b272fdde05cdda915be56248bcc25629da80dc550cd0b17a9c564f8adba2a"/>
     </ProxyEndpoints>
     <Resources>
-        <VersionInfo resourceName="xsl://XSL-Transform-1.xsl" version="SHA-512:6040fc6b8822fc5acda21a4e2eab9a0181d4fa9679b889851157cdf4e54992c30e027b2c4ec7e08c5741640f6bb1772aba17b83dedf823df54840f85f64370e6"/>
+        <VersionInfo resourceName="jsc://dateformat.js" version="SHA-512:4bc79ce2da0fd4ca5378159fe5976c7633af53881b14f53a629ba721ef97fc4528c0602bc6ef12bcf0a8b32b83cfdbb3e640356b401f05938eb2bd18aa9b4d05"/>
+        <VersionInfo resourceName="jsc://generateDates.js" version="SHA-512:ada8c21b0fde94bf26e59d839e874471c4c0e4f98bf90e2c1eca97cca163c04483d052f3937a20845fb212112cd22a3cf22b20d5163a81dc9b2a096a01e58589"/>
+        <VersionInfo resourceName="jsc://stateCacheEntry.js" version="SHA-512:4f21747320dbd4217dce80d8a91b552a6e7e7402d51b7cf31fa6536ad2beda5aabe1fe76e811a71dc74107b751e2b43467c3ccb29d7c030d21093ad3cb3cc963"/>
     </Resources>
     <SharedFlows/>
     <TargetEndpoints/>

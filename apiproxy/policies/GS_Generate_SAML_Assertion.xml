@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateSAMLAssertion ignoreContentType="false" name="GS_Generate_SAML_Assertion" enabled="true">
+    <DisplayName>GS_Generate_SAML_Assertion</DisplayName>
+    <KeyStore>
+        <Name>IDPKS</Name>
+        <Alias>signingkey</Alias>
+    </KeyStore>
+    <Subject ref="saml.subject"/>
+    <Issuer ref="saml.issuer"/>
+    <Template ignoreUnresolvedVariables="false"><![CDATA[
+<saml2:Assertion ID="{saml.id}" IssueInstant="{saml.issueInstant}" Version="2.0" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+	<saml2:Subject xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+		<saml2:NameID Format="{saml.subjectFormat}">{saml.subject}</saml2:NameID>
+		<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+			<saml2:SubjectConfirmationData InResponseTo="{wctx}" NotOnOrAfter="{saml.notOnOrAfter}" Recipient="{acsURL}"/>
+		</saml2:SubjectConfirmation>
+	</saml2:Subject>
+	<saml2:Conditions NotBefore="{saml.notBefore}" NotOnOrAfter="{saml.notOnOrAfter}" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+		<saml2:AudienceRestriction>
+			<saml2:Audience>{audience}</saml2:Audience>
+		</saml2:AudienceRestriction>
+	</saml2:Conditions>
+	<saml2:AuthnStatement AuthnInstant="{saml.authnInstant}" SessionIndex="{saml.authnSessionIndex}" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+		<saml2:AuthnContext>
+			<saml2:AuthnContextClassRef>{saml.authnContextClassRef}</saml2:AuthnContextClassRef>
+		</saml2:AuthnContext>
+	</saml2:AuthnStatement>
+</saml2:Assertion>]]></Template>
+    <OutputVariable>
+        <FlowVariable name="assertion.content"/>
+        <Message name="request">
+            <Namespaces>
+                <Namespace prefix="saml2p">urn:oasis:names:tc:SAML:2.0:protocol</Namespace>
+            </Namespaces>
+            <XPath>/saml2p:Response</XPath>
+        </Message>
+    </OutputVariable>
+</GenerateSAMLAssertion>

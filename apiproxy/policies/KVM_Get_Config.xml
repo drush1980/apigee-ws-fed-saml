@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVM_Get_Config" mapIdentifier="federationInfo">
+<KeyValueMapOperations encrypted="false" mapIdentifier="federationInfo" async="false" continueOnError="false" enabled="true" name="KVM_Get_Config">
     <DisplayName>KVM_Get_Config</DisplayName>
+    <FaultRules/>
     <Properties/>
     <ExclusiveCache>false</ExclusiveCache>
     <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <InitialEntries/>
     <Get assignTo="idpEndpoint">
         <Key>
             <Parameter>idpEndpoint</Parameter>
-        </Key>
-    </Get>
-    <Get assignTo="acsURL">
-        <Key>
-            <Parameter>acsURL</Parameter>
         </Key>
     </Get>
     <Scope>environment</Scope>

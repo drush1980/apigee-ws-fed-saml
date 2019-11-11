@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ValidateSAMLAssertion ignoreContentType="false" name="VS_Validate_SAML_Assertion" enabled="true">
+    <DisplayName>VS_Validate_SAML_Assertion</DisplayName>
+    <Source name="request">
+        <Namespaces>
+            <Namespace prefix="wst">http://docs.oasis-open.org/ws-sx/ws-trust/200512</Namespace>
+            <Namespace prefix="saml2">urn:oasis:names:tc:SAML:2.0:assertion</Namespace>
+        </Namespaces>
+        <XPath>/wst:RequestSecurityTokenResponse/wst:RequestedSecurityToken/saml2:Assertion</XPath>
+    </Source>
+    <Description/>
+    <TrustStore>IDPKS</TrustStore>
+    <RemoveAssertion>false</RemoveAssertion>
+</ValidateSAMLAssertion>

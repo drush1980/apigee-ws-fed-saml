@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LC_Lookup_State">
+    <DisplayName>LC_Lookup_State</DisplayName>
+    <CacheResource>RELAYSTATE_CACHE</CacheResource>
+    <Scope>Application</Scope>
+    <AssignTo>authnRequestInfo</AssignTo>
+    <CacheKey>
+        <KeyFragment ref="request.formparam.wctx"/>
+    </CacheKey>
+</LookupCache>

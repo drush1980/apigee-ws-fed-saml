@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_SetSAMLResponse">
+    <DisplayName>AM_SetSAMLResponse</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/xml">
+            <saml2p:Response xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" Destination="{acsURL}" ID="{saml.id}" InResponseTo="{wctx}" IssueInstant="{saml.now}" Version="2.0">
+                <saml2:Issuer>{saml.issuer}</saml2:Issuer>
+                <saml2p:Status>
+                    <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+                </saml2p:Status>
+            </saml2p:Response>
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

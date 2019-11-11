@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ExtractVariables async="false" continueOnError="false" enabled="true" name="EV_GetSAMLAuthnReqDetails">
     <DisplayName>EV_GetSAMLAuthnReqDetails</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
     <Source clearPayload="false">message.content</Source>
     <XMLPayload stopPayloadProcessing="false">
         <Namespaces>
             <Namespace prefix="saml2p">urn:oasis:names:tc:SAML:2.0:protocol</Namespace>
             <Namespace prefix="saml2">urn:oasis:names:tc:SAML:2.0:assertion</Namespace>
         </Namespaces>
+        <Variable name="authnRequestId" type="string">
+            <XPath>/saml2p:AuthnRequest/@ID</XPath>
+        </Variable>
+        <Variable name="acsURL" type="string">
+            <XPath>/saml2p:AuthnRequest/@AssertionConsumerServiceURL</XPath>
+        </Variable>
+        <Variable name="destination" type="string">
+            <XPath>/saml2p:AuthnRequest/@Destination</XPath>
+        </Variable>
         <Variable name="issuer" type="string">
             <XPath>/saml2p:AuthnRequest/saml2:Issuer/text()</XPath>
         </Variable>

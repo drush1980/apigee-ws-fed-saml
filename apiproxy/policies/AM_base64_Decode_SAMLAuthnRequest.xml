@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage async="false" continueOnError="false" enabled="true" name="AM_base64_Decode_SAMLAuthnRequest">
     <DisplayName>AM_base64_Decode_SAMLAuthnRequest</DisplayName>
+    <FaultRules/>
+    <Properties/>
     <Set>
         <Payload contentType="text/xml">{decodeBase64(request.formparam.SAMLRequest)}</Payload>
     </Set>
@@ -8,5 +10,5 @@
         <Name>SAMLRequest</Name>
     </AssignVariable>
     <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <AssignTo createNew="false" transport="http" type="request"/>
+    <AssignTo type="request" transport="http" createNew="false"></AssignTo>
 </AssignMessage>

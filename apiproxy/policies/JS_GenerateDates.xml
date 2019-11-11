@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="JS_GenerateDates">
+    <DisplayName>JS_GenerateDates</DisplayName>
+    <Properties/>
+    <IncludeURL>jsc://dateformat.js</IncludeURL>
+    <ResourceURL>jsc://generateDates.js</ResourceURL>
+</Javascript>

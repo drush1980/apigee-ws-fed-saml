@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_GetStateVars">
+    <DisplayName>AM_GetStateVars</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>wctx</Name>
+        <Ref>request.formparam.wctx</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>audience</Name>
+        <Template>{jsonPath($.issuer,authnRequestInfo)}</Template>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>acsURL</Name>
+        <Template>{jsonPath($.acsURL,authnRequestInfo)}</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
