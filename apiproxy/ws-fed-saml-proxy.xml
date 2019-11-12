@@ -7,9 +7,9 @@
     <CreatedBy>davidrush@google.com</CreatedBy>
     <Description>Proxy to convert between WS-Federation and SAML for SSO</Description>
     <DisplayName>ws-fed-saml-proxy</DisplayName>
-    <LastModifiedAt>1573495833162</LastModifiedAt>
+    <LastModifiedAt>1573518393951</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:c4df4c8afdfb4645263da11a3f2e02a4da2620e01fb081c4300751553a9a3c82dedce2a0f8227ac21e6dc9e207eb7aa9e39bee57e8c09b89939d3b02e1bfc5ef</ManifestVersion>
+    <ManifestVersion>SHA-512:00d269141d3dd214888e47af502efa285be2aeffd78e9a00bc8ea204ac9014821496843bfff9bfe6d9838c82436e0e54f5e40e1e5e38621de0ca80963fb5df4e</ManifestVersion>
     <Policies>
         <Policy>AM_GetStateVars</Policy>
         <Policy>AM_SendToTarget</Policy>

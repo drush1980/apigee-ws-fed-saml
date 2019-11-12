@@ -8,7 +8,7 @@
     </Remove>
     <Set>
         <Headers>
-            <Header name="Location">{idpEndpoint}?wa=wsignin1.0&amp;wctx={authnRequestId}&amp;wtrealm={issuer}&amp;wreply={destination}</Header>
+            <Header name="Location">{idpEndpoint}?wa=wsignin1.0&amp;wctx={authnRequestId}&amp;wtrealm={issuer}&amp;wreply=https://{request.header.Host}{proxy.basepath}/callback</Header>
         </Headers>
         <StatusCode>302</StatusCode>
         <ReasonPhrase>Found</ReasonPhrase>

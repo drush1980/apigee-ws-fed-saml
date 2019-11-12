@@ -16,9 +16,6 @@
         <Variable name="acsURL" type="string">
             <XPath>/saml2p:AuthnRequest/@AssertionConsumerServiceURL</XPath>
         </Variable>
-        <Variable name="destination" type="string">
-            <XPath>/saml2p:AuthnRequest/@Destination</XPath>
-        </Variable>
         <Variable name="issuer" type="string">
             <XPath>/saml2p:AuthnRequest/saml2:Issuer/text()</XPath>
         </Variable>
